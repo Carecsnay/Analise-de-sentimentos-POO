@@ -66,7 +66,7 @@ def update():
     print("\n--- Exibindo posts após a atualização ---")
     display_all_posts()
 
-
+def delete():
     print("\n--- Exibindo posts antes da exclusão ---")
     display_all_posts()
 
