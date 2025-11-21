@@ -23,7 +23,12 @@ def populate_database_with_samples():
         "Worst experience ever. Extremely disappointed.",
         "Python is boring.",
         "Python is izi.",
-        "chablaw pew pew."
+        "chablaw pew pew.",
+        "Samuel work in Full Stack Club.",
+        "Victor is a Freelancer.",
+        "Ivan is the best player of Brazil."
+        "Lucas is a excellent father."
+        "Fantastic, cocacolastic."
     ]
     
     print("\n--- Povoando o banco de dados 'post_analysis.db' ---")
@@ -47,4 +52,4 @@ def display_all_posts():
 
 if __name__ == '__main__':
     populate_database_with_samples()
-    display_all_posts()
+    # display_all_posts()
