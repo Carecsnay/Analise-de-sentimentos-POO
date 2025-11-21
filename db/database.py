@@ -1,5 +1,7 @@
 import sqlite3
 
+from .models import Post
+
 class Database:
     def __init__(self,db_name):
         self.connect = sqlite3.connect(db_name)
@@ -26,7 +28,11 @@ class Database:
 
     def read_posts(self):
         self.cursor.execute("SELECT * FROM analysis")
-        return self.cursor.fetchall()
+        rows = self.cursor.fetchall()
+        posts = []
+        for row in rows:
+            posts.append(Post(id=row[0], post=row[1], category=row[2], active=bool(row[3]), score=row[4]))
+        return posts
     
     def __del__(self):
         self.connect.close()
