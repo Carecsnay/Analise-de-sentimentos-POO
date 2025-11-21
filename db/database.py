@@ -34,5 +34,10 @@ class Database:
             posts.append(Post(id=row[0], post=row[1], category=row[2], active=bool(row[3]), score=row[4]))
         return posts
     
+    def update_post(self, post_id, post, category, active, score):
+        self.cursor.execute("UPDATE analysis SET post = ?, category = ?, active = ?, score = ? WHERE id = ?",
+                            (post, category, active, score, post_id))
+        self.connect.commit()
+
     def __del__(self):
         self.connect.close()
