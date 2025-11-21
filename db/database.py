@@ -18,8 +18,8 @@ class Database:
         """)
         self.connect.commit()
     
-    def insert_post(self, post, category):
-        self.cursor.execute("INSERT INTO analysis (post, category) VALUES (?,?)", (post, category))
+    def insert_post(self, post, category, active=True):
+        self.cursor.execute("INSERT INTO analysis (post, category, active) VALUES (?,?,?)", (post, category, active))
         self.connect.commit()
 
     def read_posts(self):
