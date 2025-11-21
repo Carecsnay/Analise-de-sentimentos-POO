@@ -13,13 +13,15 @@ class Database:
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             post TEXT NOT NULL,
             category TEXT,
-            active BOOLEAN
+            active BOOLEAN,
+            score FLOAT
             )
         """)
         self.connect.commit()
+        print('DB criado com sucesso!')
     
-    def insert_post(self, post, category, active=True):
-        self.cursor.execute("INSERT INTO analysis (post, category, active) VALUES (?,?,?)", (post, category, active))
+    def insert_post(self, post, category, active=True, score=None):
+        self.cursor.execute("INSERT INTO analysis (post, category, active, score) VALUES (?,?,?,?)", (post, category, active, score))
         self.connect.commit()
 
     def read_posts(self):
