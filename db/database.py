@@ -39,5 +39,9 @@ class Database:
                             (post, category, active, score, post_id))
         self.connect.commit()
 
+    def delete_post(self, post_id):
+        self.cursor.execute("DELETE FROM analysis WHERE id = ?", (post_id,))
+        self.connect.commit()
+    
     def __del__(self):
         self.connect.close()
