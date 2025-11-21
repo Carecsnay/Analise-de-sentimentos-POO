@@ -26,8 +26,8 @@ def populate_database_with_samples():
         "chablaw pew pew.",
         "Samuel work in Full Stack Club.",
         "Victor is a Freelancer.",
-        "Ivan is the best player of Brazil."
-        "Lucas is a excellent father."
+        "Ivan is the best player of Brazil.",
+        "Lucas is a excellent father.",
         "Fantastic, cocacolastic."
     ]
     
