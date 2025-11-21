@@ -18,7 +18,7 @@ class Database:
         self.connect.commit()
     
     def insert_post(self, post, category):
-        self.cursor.execute("INSERT INTO analysis (post, categoria) VALUES (?,?)", post, category)
+        self.cursor.execute("INSERT INTO analysis (post, category) VALUES (?,?)", (post, category))
         self.connect.commit()
 
     def read_posts(self):
@@ -27,3 +27,8 @@ class Database:
     
     def __del__(self):
         self.connect.close()
+
+if __name__ == '__main__':
+    db_file = 'db/post_analysis.db'
+    db = Database(db_file)
+    print(f"Banco de dados '{db_file}' criado/verificado com sucesso.")
