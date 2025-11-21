@@ -12,7 +12,8 @@ class Database:
             CREATE TABLE IF NOT EXISTS analysis (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             post TEXT NOT NULL,
-            category TEXT
+            category TEXT,
+            active BOOLEAN
             )
         """)
         self.connect.commit()
@@ -27,8 +28,3 @@ class Database:
     
     def __del__(self):
         self.connect.close()
-
-if __name__ == '__main__':
-    db_file = 'db/post_analysis.db'
-    db = Database(db_file)
-    print(f"Banco de dados '{db_file}' criado/verificado com sucesso.")
